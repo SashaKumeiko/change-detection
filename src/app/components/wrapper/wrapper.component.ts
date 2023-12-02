@@ -1,22 +1,24 @@
 import {ChangeDetectionStrategy, Component, ElementRef, inject, NgZone} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterOutlet} from '@angular/router';
-import {ClickService} from "./services/click.service";
-import {WrapperComponent} from "./components/wrapper/wrapper.component";
+import {ClickService} from "../../services/click.service";
+import {ChildComponent} from "../child/child.component";
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-wrapper',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, WrapperComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  imports: [
+    ChildComponent
+  ],
+  templateUrl: './wrapper.component.html',
+  styleUrl: './wrapper.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-  name = "init"
+export class WrapperComponent {
   private element = inject(ElementRef);
   private zone = inject(NgZone);
-  clickService = inject(ClickService)
+  constructor(public clickService:ClickService) {
+  }
+
+
   blink() {
     // Dirty Hack used to visualize the change detector
     this.element.nativeElement.firstChild.style.backgroundColor = 'crimson';
@@ -28,9 +30,5 @@ export class AppComponent {
     });
 
     return null;
-  }
-
-  setName() {
-    this.name = "new";
   }
 }
