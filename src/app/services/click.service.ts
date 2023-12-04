@@ -12,8 +12,8 @@ export class ClickService {
   user: User = { name : "no name"}
   user$: Observable<User> = new Observable<User>();
   userSubject: Subject<User> = new Subject()
-  userSig = signal<User>({ name : "no name"})
-  simpleValueSig = signal<string>("init value")
+  userSig = signal<User>({ name : "initial property of object"})
+  simpleValueSig = signal<string>("initial string")
   constructor() {
     this.user$ = this.userSubject.asObservable()
   }

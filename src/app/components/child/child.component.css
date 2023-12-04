@@ -1,4 +1,9 @@
 .wrapper {
   border: 1px solid black;
-  width: 280px;
+  width: 580px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
 }

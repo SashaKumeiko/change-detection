@@ -1,9 +1,10 @@
 <div class="wrapper">
-<div>Child component</div>
-<button (click)="clickService.setUserName('New user')" >set Name</button>
-<button (click)="clickService.nextUser('Obs user')">next user</button>
-<div>Observable {{(clickService.user$ | async)?.name}}</div>
-<div>Signal user{{clickService.userSig().name}}</div>
-  <div>Signal simple {{clickService.simpleValueSig()}}</div>
+  <div style="color: blue"> Child component </div>
+
+  <!--<button (click)="clickService.setUserName('New user')" >set Name</button>-->
+<!--<button (click)="clickService.nextUser('Obs user')">next user</button>-->
+<div>Observable value: <span>{{(clickService.user$ | async)?.name}}</span> </div>
+<div>Signal's value - object: <span>{{clickService.userSig().name}}</span></div>
+  <div>Signal's value - primitive: <span>{{clickService.simpleValueSig()}}</span></div>
 {{blink()}}
 </div>
