@@ -2,8 +2,8 @@
 <!--  <div>{{clickService.user.name}}</div>-->
 <!--  <div>Observable: {{(clickService.user$ | async)?.name}}</div>-->
  <div style="color: blue"> Them most outer component </div>
-  <button (click)="clickService.nextUser('Obs user')">next user</button>
-  <button (click)="clickService.setUserSignal('Signal user')">set signal</button>
+  <button (click)="clickService.nextUser('new emitted value')">next user</button>
+  <button (click)="clickService.setUserSignal('New prop')">set signal</button>
   <button (click)="clickService.setSimpleSignal()">set simple value</button>
   <app-wrapper></app-wrapper>
   {{blink()}}
