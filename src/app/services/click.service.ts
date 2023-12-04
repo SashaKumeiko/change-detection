@@ -5,6 +5,10 @@ type User = {
   name: string
 }
 
+function equalFunc(a: User, b: User) {
+  return JSON.stringify(a) === JSON.stringify(b)
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +16,9 @@ export class ClickService {
   user: User = { name : "no name"}
   user$: Observable<User> = new Observable<User>();
   userSubject: Subject<User> = new Subject()
-  userSig = signal<User>({ name : "initial property of object"})
+  userSig = signal<User>({ name : "initial property of object"},{
+    equal: equalFunc
+  })
   simpleValueSig = signal<string>("initial string")
   constructor() {
     this.user$ = this.userSubject.asObservable()
