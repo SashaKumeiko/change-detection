@@ -3,11 +3,12 @@ import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {ClickService} from "./services/click.service";
 import {WrapperComponent} from "./components/wrapper/wrapper.component";
+import {IntermediaryComponent} from "./components/intermediary/intermediary.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, WrapperComponent],
+  imports: [CommonModule, RouterOutlet, WrapperComponent, IntermediaryComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
