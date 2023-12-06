@@ -1,5 +1,5 @@
 import {Injectable, signal} from '@angular/core';
-import {Observable, Subject} from "rxjs";
+import {BehaviorSubject, Observable, Subject} from "rxjs";
 
 type User = {
   name: string
@@ -15,9 +15,9 @@ function equalFunc(a: User, b: User) {
 export class ClickService {
   user: User = { name : "no name"}
   user$: Observable<User> = new Observable<User>();
-  userSubject: Subject<User> = new Subject()
+  userSubject = new BehaviorSubject<User>({name: "initial prop"})
   userSig = signal<User>({ name : "initial property of object"},{
-    equal: equalFunc
+    // equal: equalFunc
   })
   simpleValueSig = signal<string>("initial string")
   constructor() {

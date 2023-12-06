@@ -2,10 +2,8 @@
 div, button {
   font-size: 28px;
 }
+
 button {
   margin: 5px
 }
 
-span {
-  color: green;
-}

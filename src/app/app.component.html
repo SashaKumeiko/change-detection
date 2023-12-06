@@ -1,10 +1,11 @@
 <div class="wrapper">
 <!--  <div>{{clickService.user.name}}</div>-->
 <!--  <div>Observable: {{(clickService.user$ | async)?.name}}</div>-->
- <div style="color: blue"> Them most outer component </div>
-  <button (click)="clickService.nextUser('new emitted value')">Set new value via Subject</button>
-  <button (click)="clickService.setUserSignal('New prop')">Set new reference type value via Signal</button>
-  <button (click)="clickService.setSimpleSignal()">Set new primitive value via Signal</button>
+ <div style="color: red">Outer component </div>
+  <div>set values using service</div>
+  <button style="color: green" (click)="clickService.nextUser('new value')">Emit new value from BehaviorSubject</button>
+  <button style="color: blueviolet" (click)="clickService.setUserSignal('New prop')">Set new reference type value of Signal</button>
+  <button style="color: blue" (click)="clickService.setSimpleSignal()">Set new primitive value of Signal</button>
   <app-wrapper></app-wrapper>
   {{blink()}}
 </div>

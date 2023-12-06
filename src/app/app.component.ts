@@ -19,7 +19,7 @@ export class AppComponent {
   clickService = inject(ClickService)
   blink() {
     // Dirty Hack used to visualize the change detector
-    this.element.nativeElement.firstChild.style.backgroundColor = 'crimson';
+    this.element.nativeElement.firstChild.style.backgroundColor = 'gray';
 
     this.zone.runOutsideAngular(() => {
       setTimeout(() => {
